@@ -29,3 +29,9 @@ def guardarMultiplesImgs(request):
         context = {'data': uploaded_images}
 
     return render(request, "index.html", context)
+
+
+def listarImagenes(request):
+    uploaded_images = Galeria.objects.all()
+    context = {'data': uploaded_images}
+    return render(request, "listar_imagenes.html", context)

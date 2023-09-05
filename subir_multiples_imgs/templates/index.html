@@ -12,7 +12,9 @@
       enctype="multipart/form-data">
       {% csrf_token %}
       <input type="file" name="images" accept="image/*" multiple />
-      <button type="submit">Send</button>
+      <button type="submit">Registrar imagenes</button>
     </form>
+    <br />
+    <a href="{% url 'listar_imagenes' %}" target="_blank">Imagenes</a>
   </body>
 </html>
