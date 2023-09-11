@@ -7,12 +7,11 @@ from .models import Galeria
 
 
 def inicio(request):
-    return render(request, 'index.html')
+    context = {'data': listarImagenes(request)}
+    return render(request, 'index.html', context)
 
 
 def guardarMultiplesImgs(request):
-    context = {}  # Inicializar context aquí
-
     if request.method == "POST":
         images = request.FILES.getlist('images')
         for image in images:
@@ -24,14 +23,8 @@ def guardarMultiplesImgs(request):
             image.name = unique_filename
             # Guardar la imagen en el sistema de archivos
             Galeria.objects.create(images=image)
-
-        uploaded_images = Galeria.objects.all()
-        context = {'data': uploaded_images}
-
-    return render(request, "index.html", context)
+    return redirect('inicio')
 
 
 def listarImagenes(request):
-    uploaded_images = Galeria.objects.all()
-    context = {'data': uploaded_images}
-    return render(request, "listar_imagenes.html", context)
+    return Galeria.objects.all()
