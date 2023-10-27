@@ -13,7 +13,9 @@ def inicio(request):
 
 def guardarMultiplesImgs(request):
     if request.method == "POST":
+        # Obtener una lista de archivos adjuntos con el nombre "images"
         images = request.FILES.getlist('images')
+        # Recorrer la lista de archivos adjuntos,
         for image in images:
             # Obtener el nombre original del archivo
             original_filename = image.name
