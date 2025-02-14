@@ -61,7 +61,7 @@
 
 ##### 1. Configurar el settings.py
 
-    El módulo os nos permite acceder a funcionalidades dependientes del Sistema Operativo.
+    El módulo nos permite acceder a funcionalidades dependientes del Sistema Operativo.
     import os
     # Es la URL que podemos usar en nuestras plantillas para referenciar las imagenes.
     MEDIA_URL = '/media/'
