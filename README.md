@@ -90,7 +90,6 @@
     class Documento(models.Model):
     	images = models.ImageField(upload_to='images/')
     	created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-        created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
         updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
 #### 4. Corriendo las migraciones
